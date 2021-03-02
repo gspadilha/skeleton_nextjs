@@ -8,6 +8,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "framer-motion": "^3.9.1",
     "lodash": "^4.17.21",
     "next": "latest",
     "polished": "^4.1.1",
