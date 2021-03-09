@@ -1,20 +1,14 @@
-import { NextRouter } from 'next/dist/next-server/lib/router/router';
-import { AppPropsType } from 'next/dist/next-server/lib/utils';
-import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme';
+import { theme } from '../theme/theme';
 import { GlobalStyle } from '../theme/global';
 
-export default function App({
-  Component,
-  pageProps,
-}: PropsWithChildren<AppPropsType<NextRouter, {}>>) {
+import { IApps } from '../interfaces/basics';
+
+export default function App({ Component, pageProps }: IApps) {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
   );
 }
